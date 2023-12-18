@@ -38,8 +38,6 @@ def str_sum(line: str, rev=False) -> int:
 
 
 def main():
-    data = None
-
     with open("inputs/1-b.txt") as f:
         data: list[str] = f.read().splitlines()
 

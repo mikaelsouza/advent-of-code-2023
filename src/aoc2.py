@@ -39,7 +39,7 @@ def main():
 
 def process_input(input: str) -> Game:
     game_num = int(input.split()[1][:-1])
-    cube_sets: str = input.split(":")[1].split(";")
+    cube_sets: list[str] = input.split(":")[1].split(";")
     game_sets = list()
     for s in cube_sets:
         cubes = dict()
@@ -50,7 +50,7 @@ def process_input(input: str) -> Game:
     return Game(game_num, game_sets)
 
 
-def is_game_possible(rules: dict[str, int], game: Game) -> list[bool]:
+def is_game_possible(rules: dict[str, int], game: Game) -> bool:
     for set in game.sets:
         tmp_rules = rules.copy()
         for color in set:
